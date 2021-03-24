@@ -8,5 +8,6 @@
 #include <string_view>
 #include <assert.h>
 #include <cassert>
+#include <sstream>
 
 #include "Types/TypeDefs.h"

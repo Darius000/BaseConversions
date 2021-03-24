@@ -77,7 +77,7 @@ void HandleHex()
 	BinaryConversions::HexaDecimalConverter converter;
 	if (j == 1)
 	{
-		std::cout << "Input Hex" << std::endl;
+		std::cout << "Input Hex in format 00" << std::endl;
 		BinaryConversions::HexaDecimal hex;
 		std::cin >> hex;
 		std::cout << converter.ToDecimal(hex) << std::endl;
@@ -123,7 +123,7 @@ void HandleHexColor()
 
 	if (j == 1)
 	{
-		std::cout << "Input HexColor" << std::endl;
+		std::cout << "Input HexColor as format 00000000" << std::endl;
 		
 		BinaryConversions::HexColor hex;
 		std::cin >> hex;
@@ -132,7 +132,7 @@ void HandleHexColor()
 	}
 	else if (j == 2)
 	{
-		std::cout << "Input Color" << std::endl;
+		std::cout << "Input Color as 0 0 0 0" << std::endl;
 		BinaryConversions::Color color;
 		std::cin >> color;
 		std::cout << BinaryConversions::Color::ToHex(color) << std::endl;

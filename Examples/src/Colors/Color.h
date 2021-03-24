@@ -8,16 +8,17 @@ namespace BinaryConversions
 	struct Color
 	{
 		Color();
-
+		~Color();
+		Color(const Color& c);
 		Color(const HexColor& hex);
 		Color(int _r, int _g, int _b , int _a);
 
-		int r = 0;
-		int g = 0;
-		int b = 0;
-		int a = 255;
+		Color& operator=(const Color& c);
+
+		int* data = nullptr;
 
 		static HexColor ToHex(const Color& c);
+		void ParseFromString(std::string_view s);
 
 		friend std::ostream& operator<<(std::ostream& os, const Color& color);
 
@@ -29,11 +30,16 @@ namespace BinaryConversions
 
 	inline std::ostream& operator<<(std::ostream& os, const Color& color)
 	{
-		return os << "{" << color.r << "," << color.g << "," << color.b << "," << color.a << "}";
+		return os << "{" << color.data[0] << "," << color.data[1] << 
+			"," << color.data[2] << "," << color.data[3] << "}";
 	}
 
 	inline std::istream& operator>>(std::istream& is, Color& color)
-	{
-		return is >> color.r >> color.g >> color.b >> color.a ;
+	{			
+		is.ignore();
+		std::string s;
+		getline(is, s);
+		color.ParseFromString(s);
+		return is ;
 	}
 }
