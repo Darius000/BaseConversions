@@ -5,6 +5,7 @@ namespace BinaryConversions
 {
 	HexColor::HexColor()
 	{
+		//Set default hex color to 0,0,0,0
 		Allocate("00000000");
 	}
 
@@ -42,6 +43,7 @@ namespace BinaryConversions
 
 	void HexColor::Allocate(const HexStr* hexstr)
 	{
+		// set each color value if string is 8 in size
 		assert(strlen(hexstr) == 8);
 
 		r = HexaDecimal(hexstr[0], hexstr[1]);
