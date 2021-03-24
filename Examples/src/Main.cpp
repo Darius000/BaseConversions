@@ -132,7 +132,7 @@ void HandleHexColor()
 	}
 	else if (j == 2)
 	{
-		std::cout << "Input Color as 0 0 0 0" << std::endl;
+		std::cout << "Input Color as 0 0 0 0 o r 0,0,0,0" << std::endl;
 		BinaryConversions::Color color;
 		std::cin >> color;
 		std::cout << BinaryConversions::Color::ToHex(color) << std::endl;
